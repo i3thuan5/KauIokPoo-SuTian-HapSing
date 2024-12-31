@@ -26,7 +26,7 @@
         mode: get
         overwrite: latest
         bucket: boohing
-        object: "{{ tsuanan_repo }}/0.2.1-checkpoints.tgz"
+        object: "SuiSiann-HunLian/0.2.1-checkpoints.tgz"
         dest: "0.2.1-checkpoints.tgz"
         access_key: "{{ AWS_ACCESS_KEY_ID }}"
         secret_key: "{{ AWS_SECRET_ACCESS_KEY }}"
