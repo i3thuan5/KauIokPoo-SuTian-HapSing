@@ -9,6 +9,7 @@ before_install:
 branches:
   only:
     - main
+    - cd
 jobs:
   include:
     - name: Check YAML format
@@ -54,7 +55,7 @@ jobs:
         - cat docker-compose.yaml | grep deploy
         - sed '/deploy/,+6d' -i docker-compose.yaml
         - sed '/healthcheck/,+5d' -i docker-compose.yaml
-        - docker-compose up -d
+        - docker-compose up -d --quiet-pull
         # Check Nginx format
         - docker-compose run --rm cache-nginx nginx -t
         - docker-compose run --rm hokbu-nginx nginx -t
