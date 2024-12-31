@@ -1,12 +1,12 @@
 ---
 services:
-  nginx-cache:
+  cache-nginx:
     image: nginx:1-alpine
     networks:
       - default
       - nginx-bridge
     volumes:
-      - "./nginx-cache/default.conf:/etc/nginx/conf.d/default.conf:ro"
+      - "./cache-nginx/default.conf:/etc/nginx/conf.d/default.conf:ro"
       - "nginx_cache_data:/cache"
     environment:
       - VIRTUAL_HOST=${VIRTUAL_HOST:-miasenn.ithuan.tw}

@@ -56,7 +56,7 @@ jobs:
         - sed '/healthcheck/,+5d' -i docker-compose.yaml
         - docker-compose up -d
         # Check Nginx format
-        - docker-compose run --rm nginx-cache nginx -t
+        - docker-compose run --rm cache-nginx nginx -t
         - docker-compose run --rm hokbu-nginx nginx -t
         - sleep 10
         - BANGTSI=http://localhost/bangtsam?taibun=ta%CC%8Dk-ke%20ts%C3%B2-hu%C3%A9%20l%C3%A2i%20tshit-th%C3%B4!
